@@ -1,45 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Cuenta regresiva simple</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 100px;
-      font-size: 3em;
-    }
-  </style>
-</head>
-<body>
-  <h1>Cuenta regresiva para el cumpleaños</h1>
-  <div id="countdown">Cargando...</div>
-
-  <script>
-    const countdownEl = document.getElementById('countdown');
-    const eventDate = new Date('2025-10-10T00:00:00').getTime();
-
-    function updateCountdown() {
-      const now = Date.now();
-      const diff = eventDate - now;
-
-      if (diff <= 0) {
-        countdownEl.textContent = '¡Feliz cumpleaños!';
-        clearInterval(timer);
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
-  </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
